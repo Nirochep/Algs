@@ -1,0 +1,21 @@
+import java.util.Scanner;
+
+public class Main2025 {
+
+    public static void main(String[] args) {
+        Scanner scan = new Scanner(System.in);
+        int testCase = scan.nextInt();
+        for (int i = 0; i < testCase; i++) {
+            int n = scan.nextInt(), k = scan.nextInt();
+            int a = n % k;
+            if (a != 0) {
+                int t = n - a;
+                int b = t * t / k * (k - 1) / 2;
+                b += (t - t / k) * a + a * (a - 1) / 2;
+                System.out.println(b);
+            } else {
+                System.out.println(n * n / k * (k - 1) / 2);
+            }
+        }
+    }
+}
